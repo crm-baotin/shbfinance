@@ -1,0 +1,11 @@
+<div style="padding:10px">
+  <label>Từ ngày:</label><br>
+  <input type="date" name="start_date"
+         value="{{ request.GET.start_date }}"><br><br>
+
+  <label>Đến ngày:</label><br>
+  <input type="date" name="end_date"
+         value="{{ request.GET.end_date }}"><br><br>
+
+  <button type="submit" class="button">Lọc</button>
+</div>

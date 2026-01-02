@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tư vấn vay tín chấp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+<!-- ===== ZALO NỔI ===== -->
+<a href="https://zalo.me/0829133391"
+   class="zalo-float"
+   target="_blank"
+   title="Chat Zalo tư vấn">
+  <img src="{% static 'img/zalo.png' %}" alt="Zalo">
+  <span>0829133391</span>
+</a>
+
+<!-- ===== LOGO TOP ===== -->
+<div class="top-logo">
+  <img src="{% static 'img/logo.png' %}" alt="Logo">
+</div>
+
+<!-- ===== BANNER SLIDER ===== -->
+<section class="banner-slider">
+  <div class="slide s1"></div>
+  <div class="slide s2"></div>
+  <div class="slide s3"></div>
+</section>
+
+<!-- ===== TITLE ===== -->
+<section class="main-title">
+  <h1>TƯ VẤN VAY TRẢ GÓP TIỀN MẶT</h1>
+  <p>Hỗ trợ trực tiếp – Thủ tục đơn giản</p>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="feature-grid">
+  <div class="feature-item">💰<br><b>20 – 100 triệu</b></div>
+  <div class="feature-item">⚡<br><b>Hỗ trợ nhanh</b></div>
+  <div class="feature-item">📄<br><b>Thủ tục gọn</b></div>
+  <div class="feature-item">🔒<br><b>Bảo mật</b></div>
+</section>
+
+<!-- ===== THÔNG TIN SẢN PHẨM ===== -->
+<section class="product-info">
+  <div class="product-info-box">
+    <p class="product-title"><strong>Thông tin sản phẩm*:</strong></p>
+
+    <ul class="product-list">
+      <li>Gói vay từ <strong>20 – 100 triệu đồng</strong></li>
+      <li>Thời gian vay <strong>6 – 36 tháng</strong></li>
+      <li>Lãi suất phẳng (tham chiếu) tối đa <strong>35,4%/năm</strong></li>
+      <li>
+        Kết quả ước tính dựa trên lãi suất phẳng (tham chiếu)
+        <strong>16,44%/năm</strong>, có thể chênh lệch nhỏ so với thực tế
+      </li>
+    </ul>
+
+    <p class="product-example">
+      Ví dụ: Vay <strong>20.000.000đ</strong> trong <strong>18 tháng</strong>,
+      tổng số tiền thanh toán khoảng <strong>25.110.000đ</strong>
+      (đã bao gồm các loại phí, trừ phí bảo hiểm & phí chuyển tiền).
+    </p>
+
+    <p class="product-note">
+      SHBFinance không thu bất kỳ khoản phí nào cho đến khi khoản vay được giải ngân.
+    </p>
+
+    <p class="product-italic">
+      <em>
+        Quyết định phê duyệt thường trong vòng 1 giờ.
+        Với khoản vay lớn hơn, thời gian có thể lâu hơn nhưng thường hoàn tất
+        trong vòng 8 giờ làm việc.
+      </em>
+    </p>
+  </div>
+</section>
+
+<!-- ===== FORM ===== -->
+<section class="form-section" id="dangky">
+  <form method="POST" class="loan-form">
+    {% csrf_token %}
+
+    <h2>ĐĂNG KÝ TƯ VẤN</h2>
+
+    <input type="text" name="full_name" placeholder="Họ và tên" required>
+    <input type="tel" name="phone" placeholder="Số điện thoại" required>
+
+    <select name="income" required>
+      <option value="">Thu nhập / tháng</option>
+      <option value="Dưới 5 triệu">Dưới 5 triệu</option>
+      <option value="5 – 8 triệu">5 – 8 triệu</option>
+      <option value="8 – 12 triệu">8 – 12 triệu</option>
+      <option value="Trên 12 triệu">Trên 12 triệu</option>
+    </select>
+
+    <select name="location" required>
+      <option value="">Nơi sinh sống</option>
+      <option value="Hà Nội">Hà Nội</option>
+      <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+      <option value="Khác">Khác</option>
+    </select>
+
+    <button type="submit">GỬI THÔNG TIN</button>
+
+    <p class="form-consent">
+      <em>
+        Bằng việc bấm nút <strong>"Gửi thông tin"</strong>,
+        <span class="consent-highlight">
+          Tôi đồng ý nhận cuộc gọi giới thiệu sản phẩm, tư vấn dịch vụ
+          của chuyên viên SHBFinance từ 08h đến 20h.
+        </span>
+      </em>
+    </p>
+  </form>
+</section>
+
+<section class="company-info">
+    <div class="company-box">
+      <p class="company-title">Về chúng tôi</p>
+      <p class="company-name">
+        Công ty Tài chính TNHH Ngân hàng TMCP Sài Gòn – Hà Nội
+      </p>
+      <p><strong>Địa chỉ:</strong> Tầng 6, Gelex Tower, 52 Lê Đại Hành,
+        phường Hai Bà Trưng, Hà Nội.</p>
+      <p><strong>Điện thoại:</strong> (024) 7109 8888</p>
+      <p><strong>Fax:</strong> (024) 7107 7688</p>
+      <p><strong>Email:</strong> cskh@shbfinance.com.vn</p>
+    </div>
+  </section>
+<!-- ===== THÔNG TIN DOANH NGHIỆP ===== -->
+<section class="cta-bottom">
+</section>
+
+<footer class="footer">
+  © 2026 – Tư vấn vay tín chấp | Bảo mật thông tin
+</footer>
+
+<!-- ===== CTA NỔI ===== -->
+<a href="#dangky" class="cta-fixed">ĐĂNG KÝ TƯ VẤN</a>
+
+</body>
+</html>

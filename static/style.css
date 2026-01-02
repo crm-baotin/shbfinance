@@ -1,0 +1,616 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #0f4da2;
+}
+
+/* ===== BANNER ===== */
+.banner-slider {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: fade 12s infinite;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.s1 { background-image: url("img/header1.jpg"); }
+.s2 { background-image: url("img/header2.jpg"); animation-delay: 4s; }
+.s3 { background-image: url("img/header3.jpg"); animation-delay: 8s; }
+
+@keyframes fade {
+  0%,40%,100% { opacity: 0; }
+  10%,30% { opacity: 1; }
+}
+
+/* ===== TITLE ===== */
+.main-title {
+  padding: 14px;
+  text-align: center;
+}
+
+/* ===== FEATURES ===== */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+  padding: 14px;
+}
+
+.feature-item {
+  background: #fff7f0;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* ===== PRODUCT INFO ===== */
+.product-info {
+  padding: 16px 14px;
+}
+
+.product-info-box {
+  max-width: 420px;
+  margin: auto;
+  background: #fff7f0;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+/* ===== FORM ===== */
+.form-section {
+  padding: 18px 14px 80px;
+  background: #fafafa;
+}
+
+.loan-form {
+  max-width: 420px;
+  margin: auto;
+  background: #fff;
+  padding: 16px;
+  border-radius: 14px;
+}
+
+.loan-form h2 {
+  text-align: center;
+  color: #ff7a00;
+  margin-bottom: 10px;
+}
+
+.loan-form input,
+.loan-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.loan-form button {
+  width: 100%;
+  padding: 12px;
+  background: #ff7a00;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* ===== CONSENT ===== */
+.form-consent {
+  margin-top: 8px;
+  font-size: 11.5px;
+  text-align: center;
+}
+
+.consent-highlight { color: #ff7a00; }
+
+/* ===== ZALO ===== */
+.zalo-float {
+  position: fixed;
+  right: 12px;
+  bottom: 80px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  padding: 6px 10px 6px 6px;
+  border-radius: 28px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 1000;
+}
+
+.zalo-float img { width: 32px; height: 32px; }
+.zalo-float span { color: #ff7a00; font-weight: 700; }
+
+/* ===== CTA BOTTOM ===== */
+.cta-bottom {
+  padding: 40px 14px 80px;
+  min-height: 320px;
+  background: url("img/footer-bg.jpg") no-repeat center 100% / contain;
+}
+
+.company-box {
+  max-width: 420px;
+  margin: auto;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 14px;
+  text-align: center;
+  font-size: 11.5px;
+  color: #777;
+}
+
+/* ===== CTA FIXED ===== */
+.cta-fixed {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff7a00;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 999;
+}
+
+/* ===== FIX LIST THÔNG TIN SẢN PHẨM ===== */
+.product-list {
+  padding-left: 18px;   /* thụt vừa */
+  margin-left: 0;
+}
+
+.product-list li {
+  list-style-type: disc; /* chấm tròn */
+  margin-left: 0;
+  padding-left: 2px;
+}
+
+/* ===== TIÊU ĐỀ CHÍNH – MÀU CAM ===== */
+.main-title h1 {
+  color: #ff7a00;        /* CAM ĐẸP */
+  font-size: 20px;
+  margin-bottom: 10px;  /* giãn với dòng dưới */
+  font-weight: 700;
+}
+
+.main-title p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ===== ZALO FLOAT – BỎ GẠCH CHÂN ===== */
+.zalo-float,
+.zalo-float span {
+  text-decoration: none !important;
+}
+
+/* ===== LOGO TRÊN ĐẦU ===== */
+.top-logo {
+  text-align: center;
+  padding: 10px 0 6px;   /* tận dụng khoảng trắng */
+  background: #ffffff;
+}
+
+/* ===== LOGO NHỎ GÓC TRÁI ===== */
+.top-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6px 10px;      /* gọn */
+  background: #ffffff;
+}
+
+.top-logo img {
+  width: 12.5vw;          /* ≈ 1/8 chiều ngang */
+  max-width: 90px;        /* chặn không to trên desktop */
+  min-width: 60px;        /* không quá bé */
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===== LOGO GÓC TRÁI – TO x2 – KHÔNG HỞ ===== */
+.top-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 10px;
+  margin: 0;
+  background: #ffffff;
+  line-height: 0;        /* diệt khoảng trắng */
+}
+
+.top-logo img {
+  display: block;
+  width: 25vw;           /* 👈 TO x2 (≈ 1/4 màn hình mobile) */
+  max-width: 180px;      /* chặn không quá to desktop */
+  min-width: 120px;      /* đảm bảo nhìn rõ */
+  height: auto;
+}
+
+/* ===== BANNER DÍNH SÁT LOGO ===== */
+.banner-slider {
+  margin: 0;
+}
+
+.slide {
+  background-position: center top; /* ảnh head bám sát trên */
+}
+
+/* ===== GIẢM KHOẢNG CÁCH HEADER -> TITLE ===== */
+.banner-slider {
+  margin-bottom: 4px;   /* 👈 giảm khoảng hở dưới ảnh */
+}
+
+.main-title {
+  padding-top: 6px;     /* 👈 kéo chữ lên gần ảnh */
+  padding-bottom: 12px;
+}
+/* ===== KÉO TIÊU ĐỀ SÁT ẢNH HEADER ===== */
+.main-title {
+  padding-top: 0 !important;    /* bỏ đệm trên */
+  padding-bottom: 12px;
+  margin-top: -6px;             /* 👈 kéo sát lên */
+  text-align: center;
+}
+
+.main-title h1 {
+  margin-top: 0 !important;     /* 👈 DIỆT margin mặc định */
+  margin-bottom: 6px;
+  color: #ff7a00;
+}
+
+.main-title p {
+  margin-top: 0;
+}
+
+/* ===== BANNER KHÔNG TRỐNG DƯỚI ===== */
+.banner-slider {
+  height: 160px;          /* 👈 GIẢM CHIỀU CAO */
+  margin-bottom: 0;
+}
+
+/* ===== GIỮ NGUYÊN BANNER – ÉP CHỮ LÊN GẦN ===== */
+
+/* KHÔNG cho banner có khoảng cách dưới */
+.banner-slider {
+  margin-bottom: 0 !important;
+}
+
+/* KÉO KHỐI CHỮ LÊN */
+.main-title {
+  padding-top: 4px !important;   /* rất nhỏ */
+  margin-top: 0 !important;
+}
+
+/* DIỆT margin mặc định của h1 */
+.main-title h1 {
+  margin-top: 0 !important;
+  margin-bottom: 6px;
+}
+
+/* Dòng phụ sát hơn */
+.main-title p {
+  margin-top: 0;
+}
+
+/* ===============================
+   FIX HIỂN THỊ PC / DESKTOP
+   =============================== */
+@media (min-width: 1024px) {
+
+  /* Khung tổng thể */
+  body {
+    background: #ffffff;
+  }
+
+  /* LOGO */
+  .top-logo {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* BANNER */
+  .banner-slider {
+    height: 360px;              /* banner to hơn trên PC */
+  }
+
+  .slide {
+    background-size: cover;     /* PC dùng cover cho đẹp */
+    background-position: center;
+  }
+
+  /* TIÊU ĐỀ */
+  .main-title {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 12px;
+  }
+
+  .main-title h1 {
+    font-size: 28px;
+  }
+
+  .main-title p {
+    font-size: 16px;
+  }
+
+  /* FEATURES */
+  .feature-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột trên PC */
+  }
+
+  /* PRODUCT INFO */
+  .product-info-box {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  /* FORM */
+  .form-section {
+    padding-top: 40px;
+  }
+
+  .loan-form {
+    max-width: 420px;
+  }
+
+  /* FOOTER / COMPANY */
+  .company-info .company-box {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+}
+/* =========================================
+   FIX PC: FULL ẢNH DƯỚI + LOGO SÁT MÉP TRÁI
+   ========================================= */
+@media (min-width: 1024px) {
+
+  /* ===== LOGO SÁT MÉP TRÁI ===== */
+  .top-logo {
+    max-width: none;        /* bỏ bó khung */
+    margin: 0;              /* bỏ căn giữa */
+    padding-left: 16px;     /* sát nhưng không dính */
+  }
+
+  /* ===== BANNER TRÊN FULL NGANG ===== */
+  .banner-slider {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  /* ===== ẢNH SLIDE TRÊN ===== */
+  .slide {
+    background-size: cover;
+  }
+
+  /* ===== ẢNH FOOTER / CTA DƯỚI FULL NGANG ===== */
+  .cta-bottom {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+  }
+
+  /* nếu ảnh dưới là background */
+  .cta-bottom {
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* nếu ảnh dưới là <img> */
+  .cta-bottom img {
+    width: 100%;
+    max-width: none;
+    display: block;
+  }
+}
+/* =====================================
+   FIX KHỐI CHỮ CUỐI KHÔNG DÍNH ẢNH
+   ===================================== */
+
+/* section chứa ảnh footer */
+.cta-bottom {
+  position: relative;
+  padding: 60px 0;              /* tạo khoảng thở trên/dưới */
+}
+
+/* box chữ */
+.company-info {
+  position: relative;
+  z-index: 2;
+}
+
+.company-box {
+  background: rgba(255, 255, 255, 0.92); /* nền trắng nhẹ */
+  padding: 18px 22px;
+  border-radius: 14px;
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+/* ==================================================
+   FIX CHUẨN PC: BANNER FULL + CHỮ DÍNH ĐÚNG FOOTER
+   ================================================== */
+@media (min-width: 1024px) {
+
+  /* ===== BANNER TRÊN FULL NGANG ===== */
+  .banner-slider {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    height: 380px;
+  }
+
+  .slide {
+    background-size: cover;      /* PC phải dùng cover */
+    background-position: center;
+  }
+
+  /* ===== FOOTER ẢNH FULL + CHỮ KHÔNG BAY ===== */
+  .cta-bottom {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 40px 0 60px;        /* giảm padding trên */
+  }
+
+  .company-info {
+    position: relative;
+    margin-top: 0;               /* KHÔNG cho bay lên */
+  }
+
+  .company-box {
+    max-width: 760px;
+    margin: 0 auto;              /* neo giữa ảnh */
+    background: rgba(255,255,255,0.95);
+    padding: 20px 26px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+}
+/* ===== BỎ KHUNG "VỀ CHÚNG TÔI" ===== */
+.company-box {
+  background: transparent;  /* bỏ nền */
+  box-shadow: none;         /* bỏ đổ bóng */
+  border-radius: 0;         /* bỏ bo góc */
+  padding: 0;               /* bỏ đệm trong */
+}
+/* ===== TINH CHỈNH "VỀ CHÚNG TÔI" ===== */
+.company-info {
+  padding-left: 16px;    /* 👈 thụt chữ vào nhẹ */
+  padding-right: 16px;
+  margin-bottom: 0px;    /* 👈 kéo sát xuống ảnh footer */
+}
+
+.cta-bottom {
+  margin-top: 0;         /* không cho đẩy ảnh xuống */
+}
+
+/* ===== DIỆT KHỐI TRẮNG GIỮA CHỮ & ẢNH FOOTER ===== */
+
+/* section chứa form phía trên */
+.form-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 8px !important;
+}
+
+/* khối "Về chúng tôi" */
+.company-info {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 2px;
+}
+
+/* ảnh footer */
+.cta-bottom {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+/* ===== DIỆT KHỐI TRẮNG GIỮA CHỮ & ẢNH FOOTER ===== */
+
+/* section chứa form phía trên */
+.form-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 8px !important;
+}
+
+/* khối "Về chúng tôi" */
+.company-info {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 2px;
+}
+
+/* ảnh footer */
+.cta-bottom {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+/* =================================
+   FIX RIÊNG MOBILE – DIỆT KHOẢNG TRẮNG CUỐI
+   ================================= */
+@media (max-width: 767px) {
+
+  /* bỏ margin cuối của form */
+  .form-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 4px !important;
+  }
+
+  /* khối chữ "Về chúng tôi" */
+  .company-info {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 2px !important;
+  }
+
+  /* đoạn text trong company-info */
+  .company-info p {
+    margin-bottom: 4px !important;
+  }
+
+  /* ảnh footer */
+  .cta-bottom {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* =================================
+   FIX RIÊNG MOBILE – DIỆT KHOẢNG TRẮNG CUỐI
+   ================================= */
+@media (max-width: 767px) {
+
+  /* bỏ margin cuối của form */
+  .form-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 4px !important;
+  }
+
+  /* khối chữ "Về chúng tôi" */
+  .company-info {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 2px !important;
+  }
+
+  /* đoạn text trong company-info */
+  .company-info p {
+    margin-bottom: 4px !important;
+  }
+
+  /* ảnh footer */
+  .cta-bottom {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
