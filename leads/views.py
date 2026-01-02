@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Lead
 
 TELEGRAM_TOKEN = "8213846644:AAG_Mom7MRzH97Y_-c7KQocQ0VS9qqf3mIc"
-CHAT_ID = "DAN_CH6663298744"
+CHAT_ID = "6663298744"
 
 def send_telegram(message):
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
