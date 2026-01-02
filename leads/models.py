@@ -8,4 +8,4 @@ class Lead(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.full_name
+        return f"{self.full_name} - {self.phone}"

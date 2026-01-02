@@ -9,6 +9,10 @@ def landing(request):
             income=request.POST.get("income"),
             location=request.POST.get("location"),
         )
-        return redirect("/?ok=1")
+        return redirect("thank_you")
 
     return render(request, "landing.html")
+
+
+def thank_you(request):
+    return render(request, "thank_you.html")
