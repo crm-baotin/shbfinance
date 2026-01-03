@@ -61,12 +61,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px 12px 90px;
+      padding: 30px 12px 60px;
     }
 
     .thank-box {
       background: #ffffff;
-      padding: 36px 24px;
+      padding: 36px 24px 28px;
       border-radius: 18px;
       max-width: 460px;
       width: 100%;
@@ -74,18 +74,10 @@
       box-shadow: 0 12px 32px rgba(0,0,0,0.1);
     }
 
-    /* ===== ẢNH THANK YOU ===== */
-    .thank-box img {
-      max-width: 300px;
-      width: 100%;
-      margin: 16px auto 20px;
-      display: block;
-    }
-
     .thank-box h1 {
       color: #1a1a1a;
       font-size: 22px;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
 
     .thank-box p {
@@ -128,8 +120,18 @@
       font-size: 15px;
     }
 
+    /* ===== ẢNH THANK YOU – ĐÚNG ĐƯỜNG DẪN ===== */
+    .thank-image {
+      margin-top: 28px;
+      max-width: 260px;
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .thank-footer {
-      margin-top: 24px;
+      margin-top: 26px;
       font-size: 12px;
       color: #777;
       text-align: center;
@@ -158,7 +160,7 @@
 <header class="header">
   <div class="header-inner">
     <a href="/">
-      <img src="{% static 'img/logo.png' %}" alt="Logo">
+      <img src="{% static 'img/logo.png' %}" alt="SHBFinance">
     </a>
     <a href="/" class="btn-register">Đăng ký ngay</a>
   </div>
@@ -170,8 +172,6 @@
   <div class="thank-box">
 
     <h1>Gửi thông tin thành công</h1>
-
-    <img src="{% static 'img/mafc/success/thank_you.png' %}" alt="Gửi thông tin thành công">
 
     <p>
       Cảm ơn anh/chị đã để lại thông tin.<br>
@@ -188,6 +188,14 @@
         Chat Zalo tư vấn ngay
       </a>
     </div>
+
+    <!-- ẢNH Ở DƯỚI CÙNG – ĐÚNG PATH -->
+    <img
+      src="{% static 'img/thanks_you.png' %}"
+      alt=""
+      class="thank-image"
+    >
+
   </div>
 
   <div class="thank-footer">
