@@ -1,48 +1,87 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="vi">
- <script>
-  gtag('event', 'lead_submit', {
-    'event_category': 'Lead',
-    'event_label': 'Form Dang Ky'
-  });
-</script>
- 
+
 <head>
   <meta charset="UTF-8">
   <title>Cảm ơn quý khách</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'style.css' %}">
+
+  <!-- GA EVENT -->
+  <script>
+    gtag('event', 'lead_submit', {
+      'event_category': 'Lead',
+      'event_label': 'Form Dang Ky'
+    });
+  </script>
+
   <style>
     body {
       background: #f5f7fb;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
 
+    /* ===== HEADER ===== */
+    .header {
+      background: #fff;
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header img {
+      height: 42px;
+    }
+
+    .btn-register {
+      background: #ff7a00;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* ===== MAIN ===== */
     .thank-wrapper {
-      min-height: 100vh;
+      min-height: calc(100vh - 70px);
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 30px 12px 90px;
     }
 
     .thank-box {
       background: #ffffff;
-      margin-top: 30px;
-      padding: 32px 24px;
+      padding: 36px 24px;
       border-radius: 18px;
-      max-width: 420px;
-      width: calc(100% - 28px);
+      max-width: 460px;
+      width: 100%;
       text-align: center;
       box-shadow: 0 12px 32px rgba(0,0,0,0.1);
     }
 
-    .thank-icon {
-      font-size: 46px;
-      margin-bottom: 10px;
+    /* ===== ẢNH THANK YOU (ĐÃ GIẢM & ĐẨY XUỐNG) ===== */
+    .thank-box img {
+      max-width: 300px;
+      width: 100%;
+      margin: 16px auto 20px;
+      display: block;
     }
 
     .thank-box h1 {
-      color: #ff7a00;
+      color: #1a1a1a;
       font-size: 22px;
       margin-bottom: 10px;
     }
@@ -60,65 +99,82 @@
     }
 
     .thank-actions {
-      margin-top: 22px;
+      margin-top: 26px;
       display: flex;
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    .btn-primary {
-      background: #ff7a00;
-      color: #fff;
+    .btn-home {
+      background: #eee;
+      color: #333;
       padding: 12px 22px;
-      border-radius: 12px;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       font-size: 14px;
     }
 
-    .btn-outline {
-      border: 2px solid #ff7a00;
-      color: #ff7a00;
-      padding: 10px 20px;
-      border-radius: 12px;
+    .btn-zalo {
+      background: #0068ff;
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-      background: #fff;
+      font-weight: 700;
+      font-size: 15px;
     }
 
     .thank-footer {
-      margin-top: 26px;
+      margin-top: 24px;
       font-size: 12px;
       color: #777;
       text-align: center;
     }
+
+    /* ===== ZALO FLOAT ===== */
+    .zalo-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 999;
+    }
+
+    .zalo-float img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+    }
   </style>
 </head>
+
 <body>
 
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/">
+      <img src="{% static 'img/logo.png' %}" alt="Logo">
+    </a>
+    <a href="/" class="btn-register">Đăng ký ngay</a>
+  </div>
+</header>
+
+<!-- CONTENT -->
 <div class="thank-wrapper">
 
-  <!-- LOGO -->
-  <div class="top-logo">
-    <img src="{% static 'img/logo.png' %}" alt="Logo">
-  </div>
-
-  <!-- BANNER (NHẸ – GIỐNG TRANG ĐẦU) -->
-  <section class="banner-slider">
-    <div class="slide s1"></div>
-  </section>
-
-  <!-- BOX CẢM ƠN -->
   <div class="thank-box">
-    <div class="thank-icon">🎉</div>
 
-    <h1>Cảm ơn Khách hàng!</h1>
+    <h1>Gửi thông tin thành công</h1>
+
+    <!-- ẢNH ĐÃ ĐƯỢC ĐẨY XUỐNG -->
+    <img src="{% static 'img/mafc/success/thank_you.png' %}" alt="Gửi thông tin thành công">
 
     <p>
-      Thông tin của anh/chị đã được ghi nhận thành công.<br>
-      Chuyên viên tư vấn sẽ chủ động liên hệ trong thời gian sớm nhất.
+      Cảm ơn anh/chị đã để lại thông tin.<br>
+      Chuyên viên tài chính sẽ liên hệ tư vấn trong thời gian sớm nhất.
     </p>
 
     <p class="thank-note">
@@ -126,9 +182,9 @@
     </p>
 
     <div class="thank-actions">
-      <a href="/" class="btn-outline">← Quay về trang chủ</a>
-      <a href="https://zalo.me/0829133391" class="btn-primary" target="_blank">
-        Chat Zalo ngay
+      <a href="/" class="btn-home">← Quay lại trang chủ</a>
+      <a href="https://zalo.me/0829133391" class="btn-zalo" target="_blank">
+        Chat Zalo tư vấn ngay
       </a>
     </div>
   </div>
@@ -136,8 +192,12 @@
   <div class="thank-footer">
     © 2026 – Tư vấn vay tín chấp | SHBFinance
   </div>
-
 </div>
+
+<!-- ZALO FLOAT -->
+<a href="https://zalo.me/0829133391" class="zalo-float" target="_blank">
+  <img src="{% static 'img/zalo-icon.png' %}" alt="Chat Zalo">
+</a>
 
 </body>
 </html>
