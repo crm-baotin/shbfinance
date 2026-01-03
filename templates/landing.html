@@ -1,19 +1,21 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <title>Tư vấn vay tín chấp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Facebook / Zalo -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shbfinance.onrender.com/">
   <meta property="og:title" content="Tư vấn vay tín chấp – Hỗ trợ nhanh trong ngày">
-  <meta property="og:description" content="Hỗ trợ vay 20–100 triệu, thủ tục đơn giản, không thu phí trước.">
+  <meta property="og:description" content="Hỗ trợ vay 20–100 triệu, thủ tục đơn giản, không thu phí trước. Đăng ký tư vấn miễn phí.">
   <meta property="og:image" content="https://shbfinance.onrender.com/static/img/share.jpg">
+  <meta property="og:image:alt" content="Tư vấn vay tín chấp SHBFinance">
 
-  <!-- GTM -->
+  <!-- ===== Google Tag Manager ===== -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -22,7 +24,7 @@
     })(window,document,'script','dataLayer','GTM-KGJ4SW62');
   </script>
 
-  <!-- GA4 -->
+  <!-- ===== Google Analytics 4 ===== -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1TDL99T8H0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -32,25 +34,76 @@
   </script>
 
   <link rel="stylesheet" href="{% static 'style.css' %}">
+
+  <!-- ===== FIX HEADER + ZALO (GIỐNG MAFC) ===== -->
+  <style>
+    /* TOP BAR */
+    .topbar{
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      z-index: 999;
+    }
+    .topbar-inner{
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar-inner img{
+      height: 40px;
+    }
+    .btn-top{
+      background: #f37021;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* ZALO NỔI – HẠ THẤP GIỐNG MAFC */
+    .zalo-float{
+      bottom: 20px !important;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ===== HEADER GIỐNG MAFC ===== -->
+<!-- ===== Google Tag Manager (noscript) ===== -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGJ4SW62"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+
+<!-- ===== TOP BAR (MỚI – GIỐNG MAFC) ===== -->
 <div class="topbar">
   <div class="topbar-inner">
-    <a href="#dangky" class="topbar-cta">ĐĂNG KÝ TƯ VẤN</a>
     <img src="{% static 'img/logo.png' %}" alt="Logo">
+    <a href="#dangky" class="btn-top">ĐĂNG KÝ TƯ VẤN</a>
   </div>
 </div>
 
-<!-- ===== ZALO FLOAT ===== -->
-<a href="https://zalo.me/0829133391" class="zalo-float" target="_blank">
+<!-- ===== ZALO NỔI ===== -->
+<a href="https://zalo.me/0829133391"
+   class="zalo-float"
+   target="_blank"
+   title="Chat Zalo tư vấn">
   <img src="{% static 'img/zalo.png' %}" alt="Zalo">
   <span>0829133391</span>
 </a>
 
-<!-- ===== BANNER ===== -->
+<!-- ===== LOGO TOP CŨ (GIỮ NGUYÊN NỘI DUNG) ===== -->
+<div class="top-logo">
+  <img src="{% static 'img/logo.png' %}" alt="Logo">
+</div>
+
+<!-- ===== BANNER SLIDER ===== -->
 <section class="banner-slider">
   <div class="slide s1"></div>
   <div class="slide s2"></div>
@@ -71,23 +124,53 @@
   <div class="feature-item">🔒<br><b>Bảo mật</b></div>
 </section>
 
-<!-- ===== PRODUCT INFO ===== -->
+<!-- ===== THÔNG TIN SẢN PHẨM ===== -->
 <section class="product-info">
   <div class="product-info-box">
     <p class="product-title"><strong>Thông tin sản phẩm*:</strong></p>
+
     <ul class="product-list">
       <li>Gói vay từ <strong>20 – 100 triệu đồng</strong></li>
       <li>Thời gian vay <strong>6 – 36 tháng</strong></li>
       <li>Lãi suất phẳng (tham chiếu) tối đa <strong>35,4%/năm</strong></li>
+      <li>
+        Kết quả ước tính dựa trên lãi suất phẳng (tham chiếu)
+        <strong>16,44%/năm</strong>, có thể chênh lệch nhỏ so với thực tế
+      </li>
     </ul>
+
+    <p class="product-example">
+      Ví dụ: Vay <strong>20.000.000đ</strong> trong <strong>18 tháng</strong>,
+      tổng số tiền thanh toán khoảng <strong>25.110.000đ</strong>
+      (đã bao gồm các loại phí, trừ phí bảo hiểm & phí chuyển tiền).
+    </p>
+
+    <p class="product-note">
+      SHBFinance không thu bất kỳ khoản phí nào cho đến khi khoản vay được giải ngân.
+    </p>
+
+    <p class="product-italic">
+      <em>
+        Quyết định phê duyệt thường trong vòng 1 giờ.
+        Với khoản vay lớn hơn, thời gian có thể lâu hơn nhưng thường hoàn tất
+        trong vòng 8 giờ làm việc.
+      </em>
+    </p>
   </div>
 </section>
 
-<!-- ===== FORM ===== -->
+{% if error %}
+  <p style="color:#ff7a00; text-align:center; margin-bottom:12px;">
+    {{ error }}
+  </p>
+{% endif %}
+
+<!-- ===== FORM ĐĂNG KÝ ===== -->
 <section class="form-section" id="dangky">
   <form method="post" class="loan-form">
     {% csrf_token %}
     <h2>ĐĂNG KÝ TƯ VẤN</h2>
+
     <input type="text" name="full_name" placeholder="Họ và tên" required>
     <input type="tel" name="phone" placeholder="Số điện thoại" required>
 
@@ -109,18 +192,29 @@
     <button type="submit">GỬI THÔNG TIN</button>
 
     <p class="form-consent">
-      <em>Tôi đồng ý nhận cuộc gọi tư vấn từ 08h–20h.</em>
+      <em>
+        Bằng việc bấm nút <strong>"Gửi thông tin"</strong>,
+        <span class="consent-highlight">
+          Tôi đồng ý nhận cuộc gọi giới thiệu sản phẩm, tư vấn dịch vụ
+          của chuyên viên SHBFinance từ 08h đến 20h.
+        </span>
+      </em>
     </p>
   </form>
 </section>
 
-<!-- ===== COMPANY ===== -->
+<!-- ===== VỀ CHÚNG TÔI ===== -->
 <section class="company-info">
   <div class="company-box">
     <p class="company-title">Về chúng tôi</p>
     <p class="company-name">
       Công ty Tài chính TNHH Ngân hàng TMCP Sài Gòn – Hà Nội
     </p>
+    <p><strong>Địa chỉ:</strong> Tầng 6, Gelex Tower, 52 Lê Đại Hành,
+      phường Hai Bà Trưng, Hà Nội.</p>
+    <p><strong>Điện thoại:</strong> (024) 7109 8888</p>
+    <p><strong>Fax:</strong> (024) 7107 7688</p>
+    <p><strong>Email:</strong> cskh@shbfinance.com.vn</p>
   </div>
 </section>
 
