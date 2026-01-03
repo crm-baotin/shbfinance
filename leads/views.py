@@ -14,7 +14,11 @@ def send_telegram(message):
         "text": message,
         "parse_mode": "HTML"
     }
-    requests.post(url, data=data, timeout=10)
+    try:
+        requests.post(url, data=data, timeout=10)
+    except Exception as e:
+        print("Telegram error:", e)
+
 
 def landing(request):
     if request.method == "POST":
@@ -23,16 +27,13 @@ def landing(request):
         income = request.POST.get("income")
         location = request.POST.get("location")
 
-        # ⏱️ Thời điểm 24h trước
         time_limit = timezone.now() - timedelta(hours=24)
 
-        # ❌ Nếu số này đã gửi trong 24h → chặn
         if Lead.objects.filter(phone=phone, created_at__gte=time_limit).exists():
             return render(request, "landing.html", {
                 "error": "Số điện thoại này đã gửi thông tin trong vòng 24 giờ qua. Vui lòng thử lại sau."
             })
 
-        # ✅ Lưu lead
         Lead.objects.create(
             full_name=full_name,
             phone=phone,
@@ -40,7 +41,6 @@ def landing(request):
             location=location,
         )
 
-        # 🔔 Gửi Telegram
         message = (
             "📥 <b>LEAD MỚI</b>\n\n"
             f"👤 <b>Họ tên:</b> {full_name}\n"
@@ -48,12 +48,14 @@ def landing(request):
             f"💰 <b>Thu nhập:</b> {income}\n"
             f"📍 <b>Khu vực:</b> {location}"
         )
+
+        # 🔔 Gửi Tele (có lỗi cũng KHÔNG ảnh hưởng redirect)
         send_telegram(message)
 
+        # 🔥 DÒNG QUYẾT ĐỊNH
         return redirect("thank_you")
 
     return render(request, "landing.html")
-
 
 
 def thank_you(request):
