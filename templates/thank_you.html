@@ -8,12 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'style.css' %}">
 
-  <!-- GA EVENT -->
+  <!-- GA EVENT (SAFE – KHÔNG GÂY 500) -->
   <script>
-    gtag('event', 'lead_submit', {
-      'event_category': 'Lead',
-      'event_label': 'Form Dang Ky'
-    });
+    if (typeof gtag === "function") {
+      gtag('event', 'lead_submit', {
+        'event_category': 'Lead',
+        'event_label': 'Form Dang Ky'
+      });
+    }
   </script>
 
   <style>
@@ -72,7 +74,7 @@
       box-shadow: 0 12px 32px rgba(0,0,0,0.1);
     }
 
-    /* ===== ẢNH THANK YOU (ĐÃ GIẢM & ĐẨY XUỐNG) ===== */
+    /* ===== ẢNH THANK YOU ===== */
     .thank-box img {
       max-width: 300px;
       width: 100%;
@@ -169,7 +171,6 @@
 
     <h1>Gửi thông tin thành công</h1>
 
-    <!-- ẢNH ĐÃ ĐƯỢC ĐẨY XUỐNG -->
     <img src="{% static 'img/mafc/success/thank_you.png' %}" alt="Gửi thông tin thành công">
 
     <p>
