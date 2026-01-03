@@ -683,3 +683,50 @@ body {
     padding-bottom: 20px !important;
   }
 }
+
+/* =====================================
+   MAFC HEADER – FIX NHẸ, KHÔNG PHÁ CODE
+   ===================================== */
+
+/* LOGO TRÊN CÙNG – NHỎ LẠI */
+.topbar-inner img {
+  height: 34px !important;   /* giống MAFC */
+}
+
+/* NÚT ĐĂNG KÝ – 1 DÒNG + HỘP NỔI */
+.btn-top {
+  white-space: nowrap !important;   /* không xuống dòng */
+  font-size: 13px !important;
+  padding: 8px 18px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg,#ff8a00,#f37021) !important;
+  box-shadow: 0 6px 16px rgba(243,112,33,.35) !important;
+  font-weight: 700 !important;
+}
+
+/* HOVER NHẸ */
+.btn-top:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(243,112,33,.45);
+}
+
+/* =====================================
+   ẨN LOGO THỪA BÊN DƯỚI
+   ===================================== */
+.top-logo {
+  display: none !important;
+}
+
+/* =====================================
+   ZALO FLOAT – HẠ THẤP NHƯ MAFC
+   ===================================== */
+.zalo-float {
+  bottom: 20px !important;
+}
+
+/* =====================================
+   BỎ CTA FIXED DƯỚI CÙNG
+   ===================================== */
+.cta-fixed {
+  display: none !important;
+}
