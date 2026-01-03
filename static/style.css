@@ -614,3 +614,72 @@ body {
     padding-top: 0 !important;
   }
 }
+
+/* ===============================
+   MASTER LAYOUT – MAFC STANDARD
+   ÁP DỤNG RIÊNG CHO PC
+   =============================== */
+
+@media (min-width: 768px) {
+
+  /* KHÓA CONTAINER */
+  section,
+  .main-title,
+  .product-info,
+  .company-info,
+  .form-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  /* HERO / BANNER ĐỪNG QUÁ CAO */
+  .banner-slider {
+    height: 380px !important;
+  }
+
+  /* TITLE GỌN LẠI */
+  .main-title {
+    margin-bottom: 20px !important;
+  }
+
+  /* GRID FEATURE ĐỀU */
+  .feature-grid {
+    gap: 20px !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* PRODUCT BOX ĐỪNG GIÃN */
+  .product-info-box {
+    padding: 32px 36px !important;
+    max-width: 960px;
+    margin: auto;
+  }
+
+  /* FORM GỌN – GIỐNG MAFC */
+  .form-section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  .loan-form {
+    max-width: 420px;
+    margin: auto;
+  }
+
+  .loan-form h2 {
+    margin-bottom: 20px !important;
+  }
+
+  /* ABOUT */
+  .company-box {
+    max-width: 960px;
+    margin: auto;
+  }
+
+  /* FOOTER ĐỪNG CÁCH QUÁ XA */
+  .footer {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
