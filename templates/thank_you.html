@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'style.css' %}">
 
-  <!-- GA EVENT (SAFE – KHÔNG GÂY 500) -->
+  <!-- GA EVENT (SAFE) -->
   <script>
     if (typeof gtag === "function") {
       gtag('event', 'lead_submit', {
@@ -57,11 +57,10 @@
 
     /* ===== MAIN ===== */
     .thank-wrapper {
-      min-height: calc(100vh - 70px);
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px 12px 60px;
+      padding: 30px 12px 0;
     }
 
     .thank-box {
@@ -72,10 +71,12 @@
       width: 100%;
       text-align: center;
       box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+      margin-bottom: 28px;
     }
 
+    /* 🔥 TIÊU ĐỀ MÀU CAM */
     .thank-box h1 {
-      color: #1a1a1a;
+      color: #ff7a00;
       font-size: 22px;
       margin-bottom: 14px;
     }
@@ -86,10 +87,13 @@
       line-height: 1.6;
     }
 
+    /* 🔥 KHUNG GIỜ – TO HƠN + MÀU CAM */
     .thank-note {
-      margin-top: 12px;
-      font-size: 14px;
-      color: #555;
+      margin-top: 14px;
+      font-size: 16px;
+      color: #ff7a00;
+      font-weight: 600;
+      line-height: 1.6;
     }
 
     .thank-actions {
@@ -120,18 +124,21 @@
       font-size: 15px;
     }
 
-    /* ===== ẢNH THANK YOU – ĐÚNG ĐƯỜNG DẪN ===== */
-    .thank-image {
-      margin-top: 28px;
-      max-width: 260px;
+    /* ===== KHỐI ẢNH DƯỚI ===== */
+    .thank-image-wrap {
       width: 100%;
+      margin-top: 10px;
+    }
+
+    .thank-image-wrap img {
+      width: 100%;
+      max-width: 1100px;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
 
     .thank-footer {
-      margin-top: 26px;
+      margin: 26px 0 80px;
       font-size: 12px;
       color: #777;
       text-align: center;
@@ -179,7 +186,8 @@
     </p>
 
     <p class="thank-note">
-      Anh/chị vui lòng để ý điện thoại trong khung giờ <b>08h – 20h</b>.
+      Anh/chị vui lòng để ý điện thoại<br>
+      trong khung giờ <b>08h – 20h</b>
     </p>
 
     <div class="thank-actions">
@@ -189,18 +197,17 @@
       </a>
     </div>
 
-    <!-- ẢNH Ở DƯỚI CÙNG – ĐÚNG PATH -->
-    <img
-      src="{% static 'img/thanks_you.png' %}"
-      alt=""
-      class="thank-image"
-    >
+  </div>
 
+  <!-- ẢNH FOOTER -->
+  <div class="thank-image-wrap">
+    <img src="{% static 'img/thanks_you.png' %}" alt="">
   </div>
 
   <div class="thank-footer">
     © 2026 – Tư vấn vay tín chấp | SHBFinance
   </div>
+
 </div>
 
 <!-- ZALO FLOAT -->
